@@ -76,7 +76,7 @@ clientFetch.interceptors.response.use(
       try {
         return await authService.refresh()
       } catch (e) {
-        router.push('/auth/login')
+        router.push('/goit-vue-project/auth/login')
         return Promise.reject(e)
       }
     }

@@ -7,17 +7,17 @@ const LoginView = () => import('../views/LoginView.vue')
 const RegistrationView = () => import('../views/RegistrationView.vue')
 
 const routes = [
-  { path: '/', component: GreetingView },
+  { path: '/goit-vue-project', component: GreetingView },
   {
-    path: '/auth',
+    path: '/goit-vue-project/auth',
     component: AuthView,
-    redirect: '/auth/login',
+    redirect: '/goit-vue-project/auth/login',
     children: [
       { path: 'login', component: LoginView },
       { path: 'registration', component: RegistrationView }
     ]
   },
-  { path: '/map', component: HomePageView }
+  { path: '/goit-vue-project/map', component: HomePageView }
 ]
 
 export const router = createRouter({
