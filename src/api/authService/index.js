@@ -26,28 +26,25 @@ class AuthService {
 
   async login(body) {
     const { data } = await clientFetch.post('/user/login', body)
-    const { accessToken } = data
-
+    const { token: accessToken } = data
     this.setToken(accessToken)
   }
 
   async registerUser(body) {
     const { data } = await clientFetch.post('/user/register', body)
-    const { accessToken } = data
+    const { token: accessToken } = data
 
     this.setToken(accessToken)
   }
 
   async logout() {
     await clientFetch.get('/user/logout')
-
     this.clearToken()
   }
 
   async refresh() {
     const { data } = await clientFetch.get('/user/refresh')
     const { accessToken } = data
-
     this.setToken(accessToken)
   }
 }
@@ -71,16 +68,17 @@ clientFetch.interceptors.response.use(
   (response) => response,
   async (error) => {
     const errorCode = error.response.status
-
     if (errorCode === 401) {
       try {
-        return await authService.refresh()
+        await authService.refresh()
+        const originalRequest = error.config
+        originalRequest.headers.Authorization = `Bearer ${authService.getToken()}`
+        return clientFetch(originalRequest)
       } catch (e) {
         router.push('/goit-vue-project/auth/login')
         return Promise.reject(e)
       }
     }
-
     return Promise.reject(error)
   }
 )

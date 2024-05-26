@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import UploadIcon from './UploadIcon.vue'
+import ErrorMessage from '../ErrorMessage/ErrorMessage.vue'
 
 const emit = defineEmits(['uploaded'])
 const errorMessage = ref('')
@@ -33,6 +34,6 @@ const handleUploadImg = (event) => {
         <span class="underline text-xs"><slot></slot></span>
       </span>
     </label>
-    <div v-if="errorMessage" class="text-red-500">{{ errorMessage }}</div>
+    <ErrorMessage v-if="errorMessage" :text="errorMessage" />
   </div>
 </template>

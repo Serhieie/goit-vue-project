@@ -1,6 +1,7 @@
 <script setup>
 import IButton from '../IButton/IButton.vue'
 import IModal from '../IModal/IModal.vue'
+import ErrorMessage from '../ErrorMessage/ErrorMessage.vue'
 import { defineEmits } from 'vue'
 
 defineProps({
@@ -27,13 +28,13 @@ const emit = defineEmits(['cancel', 'confirm'])
 
 <template>
   <IModal v-if="isOpen" @close="emit('cancel')">
-    <div class="mb-4 text-lg">{{ title }}</div>
-    <div class="flex gap-3 justify-center">
-      <IButton @click="emit('cancel')">Відхилити</IButton>
+    <div class="mb-6 text-lg">{{ title }}</div>
+    <div class="flex gap-12 justify-center">
+      <IButton variant="outlined" @click="emit('cancel')">Відхилити</IButton>
       <IButton variant="gradient" :is-loading="isLoading" @click="emit('confirm')">
         Підтвердити
       </IButton>
     </div>
-    <div v-if="hasError" class="text-red-500">Щось пішло не так</div>
+    <ErrorMessage v-if="hasError" text="Упс щось пішло не так" />
   </IModal>
 </template>

@@ -3,6 +3,7 @@ import LoginForm from '../components/Auth/LoginForm/LoginForm.vue'
 import { authService } from '../api/authService'
 import { useRouter } from 'vue-router'
 import { useMutation } from '../composables/useMutation'
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage.vue'
 
 const router = useRouter()
 const {
@@ -17,5 +18,5 @@ const {
 
 <template>
   <LoginForm @submit="handleLogin" :is-loading="isLoading" />
-  <div v-if="error" class="text-red-500">{{ error.message }}</div>
+  <ErrorMessage v-if="error" :text="error.message" />
 </template>

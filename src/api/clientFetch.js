@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 export const clientFetch = axios.create({
-  baseURL: 'https://back-for-vue.b.goit.study/'
-  // baseURL: 'https://reactoctopus-back.onrender.com/api/'
+  baseURL: 'http://localhost:3000/api/',
+  withCredentials: true
+  // baseURL: 'https://vue-proj-back.onrender.com'
 })

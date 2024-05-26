@@ -24,7 +24,7 @@ onMounted(() => {
     <div class="w-10 h-10 flex items-center justify-center rounded-full color-primary bg-primary">
       <UserIcon class="text-white" />
     </div>
-    <span v-if="isLoading">Loading...</span>
+    <span class="text-center" v-if="isLoading">Loading...</span>
     <span v-if="userInfo">{{ userInfo.data.name }}</span>
   </div>
 </template>

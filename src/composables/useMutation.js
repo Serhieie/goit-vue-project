@@ -19,7 +19,6 @@ export const useMutation = ({ mutationFn, onSuccess, onError }) => {
       isLoading.value = false
     }
   }
-
   return {
     data,
     isLoading,

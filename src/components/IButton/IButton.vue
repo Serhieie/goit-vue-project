@@ -19,8 +19,10 @@ const props = defineProps({
 
 const bgStyles = computed(() => {
   return props.variant === 'gradient'
-    ? 'bg-gradient-to-r from-[#FFA279] to-[#F3743D]'
-    : 'bg-[#FFA279]'
+    ? 'bg-gradient-to-r from-[#FFA279] to-[#F3743D] text-white'
+    : props.variant === 'outlined'
+      ? ' text-primary bg-orange-50 border hover:border-orange-200 border-[#FFA279] hover:text-orange-400 hover:bg-[#fff] transition-all duration-300 '
+      : 'bg-[#FFA279] text-white '
 })
 
 const isLink = computed(() => !!props.to)
@@ -36,7 +38,7 @@ const link = computed(() => {
 <template>
   <component
     :is="componentName"
-    class="rounded-xl py-3 px-10 text-white font-bold -tracking-wider"
+    class="rounded-xl py-3 px-10 font-bold -tracking-wider"
     :class="bgStyles"
     :to="link"
   >
