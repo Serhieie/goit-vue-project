@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { authService } from '../api/authService'
+import GreetingView from '@/views/GreetingView.vue'
 
-const GreetingView = () => import('@/views/GreetingView.vue')
+// const GreetingView = () => import('@/views/GreetingView.vue')
 const AuthView = () => import('@/views/AuthView.vue')
 const HomePageView = () => import('@/views/HomepageView.vue')
 const LoginView = () => import('@/views/LoginView.vue')
