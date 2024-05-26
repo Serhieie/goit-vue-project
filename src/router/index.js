@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { authService } from '../api/authService'
 
-const GreetingView = () => import('../views/GreetingView.vue')
-const AuthView = () => import('../views/AuthView.vue')
-const HomePageView = () => import('../views/HomepageView.vue')
-const LoginView = () => import('../views/LoginView.vue')
-const RegistrationView = () => import('../views/RegistrationView.vue')
+const GreetingView = () => import('@/views/GreetingView.vue')
+const AuthView = () => import('@/views/AuthView.vue')
+const HomePageView = () => import('@/views/HomepageView.vue')
+const LoginView = () => import('@/views/LoginView.vue')
+const RegistrationView = () => import('@/views/RegistrationView.vue')
 
 const BASE = import.meta.env.VITE_BASE_URL_FRONT
 
