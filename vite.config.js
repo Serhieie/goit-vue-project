@@ -7,8 +7,12 @@ export default defineConfig({
   plugins: [vue(), svgr()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      src: '/src',
+      components: '/src/components',
+      pages: '/src/views',
+      assets: '/src/assets'
     }
   },
-  base: '/goit-vue-project'
+  base: '/'
 })
