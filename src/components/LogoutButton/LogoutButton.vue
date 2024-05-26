@@ -10,7 +10,7 @@ const { mutation: logoutUser, isLoading } = useMutation({
   mutationFn: () => authService.logout(),
   onSuccess: () => {
     authService.clearToken()
-    router.replace('/goit-vue-project/auth/login')
+    router.replace('/auth/login')
   }
 })
 </script>

@@ -12,7 +12,7 @@ const {
   mutation: handleLogin
 } = useMutation({
   mutationFn: (data) => authService.login(data),
-  onSuccess: () => router.replace('/goit-vue-project/map')
+  onSuccess: () => router.replace('/map')
 })
 </script>
 
