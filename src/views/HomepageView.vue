@@ -74,7 +74,7 @@ onMounted(() => {
 
 <template>
   <main class="flex h-screen">
-    <div class="relative bg-white h-full w-[400px] shrink-0 overflow-auto">
+    <div class="relative bg-white h-full w-[330px] shrink-0 overflow-auto">
       <UserInfo />
       <div v-if="isPlacesLoading" class="text-black px-6 text-center">Loading...</div>
       <FavoritePlaces

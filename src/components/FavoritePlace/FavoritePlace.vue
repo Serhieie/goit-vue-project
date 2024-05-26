@@ -27,7 +27,7 @@ const emit = defineEmits(['edit', 'delete'])
 <template>
   <div class="text-gray mb-6 last:mb-0 max-w-[400px] px-3 break-all overflow-y-auto">
     <div class="flex gap-4">
-      <img class="w-[76px] h-[76px] shrink-0 rounded-md" :src="props.img || fallbackImage" alt="" />
+      <img class="w-[52px] h-[52px] shrink-0 rounded-md" :src="props.img || fallbackImage" alt="" />
       <div class="w-full">
         <div class="flex justify-between items-center mb-2">
           <h2 class="font-bold text-sm text-[#2C2C2C]">{{ props.title }}</h2>
