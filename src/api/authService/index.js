@@ -75,7 +75,7 @@ clientFetch.interceptors.response.use(
         originalRequest.headers.Authorization = `Bearer ${authService.getToken()}`
         return clientFetch(originalRequest)
       } catch (e) {
-        router.push('/auth/login')
+        router.push('/goit-vue-project/auth/login')
         return Promise.reject(e)
       }
     }

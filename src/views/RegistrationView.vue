@@ -3,7 +3,7 @@ import RegistrationForm from '../components/Auth/RegistrationForm/RegistrationFo
 import { authService } from '../api/authService'
 import { useRouter } from 'vue-router'
 import { useMutation } from '../composables/useMutation'
-import ErrorMessage from '@/components/ErrorMessage/ErrorMessage.vue'
+import ErrorMessage from '../components/ErrorMessage/ErrorMessage.vue'
 
 const router = useRouter()
 
@@ -13,7 +13,7 @@ const {
   mutation: handleRegisterUser
 } = useMutation({
   mutationFn: (data) => authService.registerUser(data),
-  onSuccess: () => router.replace('/map')
+  onSuccess: () => router.replace('/goit-vue-project/map')
 })
 </script>
 
