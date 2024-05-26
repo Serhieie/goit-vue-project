@@ -27,7 +27,7 @@ export const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const authRoutes = ['login', 'registration', 'greeting']
+  const authRoutes = ['login', 'register', 'greeting']
   const { name } = to
   if (authService.isLoggedIn() && authRoutes.includes(name)) {
     next({ name: 'home' })

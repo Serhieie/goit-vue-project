@@ -3,8 +3,6 @@ import svgr from 'vite-plugin-svgr'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-export const BASE_FRONT = '/'
-
 export default defineConfig({
   plugins: [vue(), svgr()],
   resolve: {
@@ -12,5 +10,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: BASE_FRONT
+  base: '/goit-vue-project'
 })
