@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 env:
-  VITE_TOKEN: ${{secrets.VITE_TOKEN}},
+  VITE_TOKEN: ${{secrets.VITE_TOKEN}}
   VITE_BASE_URL_FRONT: ${{secrets.VITE_BASE_URL_FRONT}}
 jobs:
   build-and-deploy:
